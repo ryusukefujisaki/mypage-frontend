@@ -2,7 +2,10 @@
 import axios from '@/utilities/axios'
 
 axios.get('/').then(response => {
-  document.getElementsByClassName('backend-framework')[0].innerHTML = response.data
+  const backgroundFrameworkData = response.data
+    .replace('body {', '.backend-framework body .{')
+    .replace('ul {', '.backend-framework ul .{')
+  document.getElementsByClassName('backend-framework')[0].innerHTML = backgroundFrameworkData
 })
 </script>
 
