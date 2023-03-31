@@ -9,11 +9,15 @@ import BackendFramework from '@/pages/backend_framework/BackendFramework.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    redirect: { name: 'article_list' }
+  },
+  {
+    path: '/articles',
     name: 'article_list',
     component: ArticleList
   },
   {
-    path: '/:id',
+    path: '/articles/:id',
     name: 'article_detail',
     component: ArticleDetail
   },

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const activeMenuNumber = ref(0)
+const activeMenuNumber = ref<number>(0)
 const setActiveMenuNumber = (menuNumber: number): void => {
   activeMenuNumber.value = menuNumber
 }
@@ -16,7 +16,7 @@ const setActiveMenuNumber = (menuNumber: number): void => {
             :to="{ name: 'article_list' }"
             :class="{ 'is-active': activeMenuNumber == 0 }" @click="setActiveMenuNumber(0)"
         >
-          Article List
+          Articles
         </router-link>
       </li>
       <li>

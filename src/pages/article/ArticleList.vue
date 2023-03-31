@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
 import { formatDate } from '@/utilities/displayHelper'
 
-interface Article { title: string, created_at: string }
+interface Article { id: number, title: string, created_at: string }
 const articles = ref<Article[]>([])
 axios.get('/articles').then(response => {
   articles.value = response.data
