@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from '@/utilities/axios'
+import { formatDate } from '@/utilities/displayHelper'
 
 interface Article { title: string, created_at: string }
 const articles = ref<Article[]>([])
@@ -22,7 +23,7 @@ const articles = ref<Article[]>([])
       <tr v-for="(article, index) in articles" :key="index">
         <th>{{ index + 1 }}</th>
         <td>{{ article.title }}</td>
-        <td>{{ article.created_at }}</td>
+        <td>{{ formatDate(article.created_at) }}</td>
       </tr>
     </tbody>
   </table>
