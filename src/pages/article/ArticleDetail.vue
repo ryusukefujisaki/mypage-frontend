@@ -6,7 +6,12 @@ import { formatDate } from '@/utilities/displayHelper'
 
 const id = useRoute().params.id
 interface Article { title: string, content: string, created_at: string, updated_at: string }
-const articleDetail = ref<Article>({})
+const articleDetail = ref<Article>({
+  title: '',
+  content: '',
+  created_at: '',
+  updated_at: ''
+})
 axios.get(`/articles/${id}`).then(response => {
   articleDetail.value = response.data
 })
