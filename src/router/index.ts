@@ -2,14 +2,24 @@ import Vue from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 import ArticleList from '@/pages/article/ArticleList.vue'
+import ArticleDetail from '@/pages/article/ArticleDetail.vue'
 import FrontendFramework from '@/pages/frontend_framework/FrontendFramework.vue'
 import BackendFramework from '@/pages/backend_framework/BackendFramework.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    redirect: { name: 'article_list' }
+  },
+  {
+    path: '/articles',
     name: 'article_list',
     component: ArticleList
+  },
+  {
+    path: '/articles/:id',
+    name: 'article_detail',
+    component: ArticleDetail
   },
   {
     path: '/frontend_framework',
