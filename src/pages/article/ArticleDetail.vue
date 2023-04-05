@@ -18,7 +18,7 @@ axios.get(`/articles/${id}`).then(response => {
 </script>
 
 <template>
-  <p class="title">{{ articleDetail.title }}</p>
+  <p class="is-size-4 has-text-weight-medium">{{ articleDetail.title }}</p>
   <hr>
   <div>{{ articleDetail.content }}</div>
   <br>
