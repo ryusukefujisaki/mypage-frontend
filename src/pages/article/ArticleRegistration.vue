@@ -2,20 +2,30 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import ErrorMessage from '@/components/ErrorMessage.vue'
 
 interface Article { title: string, content: string }
 const input = ref<Article>({ title: '', content: '' })
 
 const router = useRouter()
+const errorRef = ref()
 const toList = () => { router.push({ name: 'article_list' }) }
 const onSubmit = () => {
-  axios.post('/articles', input.value).then(() => { toList() })
+  axios.post('/articles', input.value).then(() => {
+    toList() }
+  ).catch(error => {
+    errorRef.value = error
+  })
+}
+const cleanError = () => {
+  errorRef.value = null
 }
 </script>
 
 <template>
   <p class="is-size-4 has-text-weight-medium">Article Registration</p>
   <hr>
+  <ErrorMessage :error="errorRef" @delete="cleanError" />
   <div class="field">
     <label class="label">Title</label>
     <div class="control">
