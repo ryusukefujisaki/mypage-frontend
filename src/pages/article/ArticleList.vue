@@ -14,9 +14,15 @@ const router = useRouter()
 const toDetail = (id: number): void => {
   router.push({ name: 'article_detail', params: { id } })
 }
+const toRegistration = () => { router.push({ name: 'article_registration' }) }
 </script>
 
 <template>
+  <div class="level">
+    <p class="is-size-4 has-text-weight-medium">Article List</p>
+    <button class="button is-primary level-left" @click="toRegistration">Article Registration</button>
+  </div>
+  <hr>
   <table class="table is-striped is-hoverable is-fullwidth">
     <thead class="has-background-success-light">
       <tr>
