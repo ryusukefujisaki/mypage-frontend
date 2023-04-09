@@ -17,6 +17,7 @@ axios.get(`/articles/${id}`).then(response => {
 })
 
 const router = useRouter()
+const toUpdate = () => { router.push({ name: 'article_update', params: { id } }) }
 const onDelete = () => {
   axios.delete(`/articles/${id}`).then(() => {
     router.push({ name: 'article_list' })
@@ -30,6 +31,7 @@ const onDelete = () => {
       <p class="level-item is-size-4 has-text-weight-medium">{{ articleDetail.title }}</p>
     </div>
     <div class="level-right">
+      <button class="level-item button is-primary is-light" @click="toUpdate">Update</button>
       <button class="level-item button is-danger is-light" @click="onDelete">Delete</button>
     </div>
   </div>

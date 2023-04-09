@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import ArticleList from '@/pages/article/ArticleList.vue'
 import ArticleDetail from '@/pages/article/ArticleDetail.vue'
 import ArticleRegistration from '@/pages/article/ArticleRegistration.vue'
+import ArticleUpdate from '@/pages/article/ArticleUpdate.vue'
 import FrontendFramework from '@/pages/frontend_framework/FrontendFramework.vue'
 import BackendFramework from '@/pages/backend_framework/BackendFramework.vue'
 
@@ -26,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/articles/registration',
     name: 'article_registration',
     component: ArticleRegistration
+  },
+  {
+    path: '/articles/:id/update',
+    name: 'article_update',
+    component: ArticleUpdate
   },
   {
     path: '/frontend_framework',
