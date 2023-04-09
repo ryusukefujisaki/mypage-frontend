@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import ConfirmationModal from '@/components/ConfirmationModal.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 
 interface Article { title: string, content: string }
@@ -11,6 +12,7 @@ const router = useRouter()
 const errorRef = ref()
 const toList = () => { router.push({ name: 'article_list' }) }
 const onSubmit = () => {
+  hideModal()
   axios.post('/articles', input.value).then(() => {
     toList() }
   ).catch(error => {
@@ -19,6 +21,14 @@ const onSubmit = () => {
 }
 const cleanError = () => {
   errorRef.value = null
+}
+
+const doesShowModal = ref<boolean>(false)
+const showModal = () => {
+  doesShowModal.value = true
+}
+const hideModal = () => {
+  doesShowModal.value = false
 }
 </script>
 
@@ -40,10 +50,11 @@ const cleanError = () => {
   </div>
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-primary" @click="onSubmit">Submit</button>
+      <button class="button is-primary" @click="showModal">Submit</button>
     </div>
     <div class="control">
       <button class="button is-light" @click="toList">Cancel</button>
     </div>
   </div>
+  <ConfirmationModal :isActive="doesShowModal" @yes="onSubmit" @no="hideModal" />
 </template>
