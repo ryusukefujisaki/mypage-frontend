@@ -14,7 +14,7 @@ const router = useRouter()
 const toDetail = (id: number): void => {
   router.push({ name: 'article_detail', params: { id } })
 }
-const toRegistration = () => { router.push({ name: 'article_registration' }) }
+const toRegister = () => { router.push({ name: 'article_register' }) }
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const toRegistration = () => { router.push({ name: 'article_registration' }) }
       <p class="level-item is-size-4 has-text-weight-medium">Article List</p>
     </div>
     <div class="level-right">
-      <button class="level-item button is-primary is-light" @click="toRegistration">Article Registration</button>
+      <button class="level-item button is-primary is-light" @click="toRegister">Register</button>
     </div>
   </div>
   <hr>
