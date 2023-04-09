@@ -23,7 +23,7 @@ const cleanError = () => {
 </script>
 
 <template>
-  <p class="is-size-4 has-text-weight-medium">Article Registration</p>
+  <p class="is-size-4 has-text-weight-medium">Article Register</p>
   <hr>
   <ErrorMessage :error="errorRef" @delete="cleanError" />
   <div class="field">
