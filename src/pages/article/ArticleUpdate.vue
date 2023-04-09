@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import ConfirmationModal from '@/components/ConfirmationModal.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 
 const id = useRoute().params.id
@@ -15,6 +16,7 @@ const router = useRouter()
 const errorRef = ref()
 const toDetail = () => { router.push({ name: 'article_detail', params: { id } }) }
 const onUpdate = () => {
+  hideModal()
   axios.patch(`/articles/${id}`, input.value).then(() => {
     toDetail()
   }).catch(error => {
@@ -23,6 +25,14 @@ const onUpdate = () => {
 }
 const cleanError = () => {
   errorRef.value = null
+}
+
+const doesShowModal = ref<boolean>(false)
+const showModal = () => {
+  doesShowModal.value = true
+}
+const hideModal = () => {
+  doesShowModal.value = false
 }
 </script>
 
@@ -44,10 +54,11 @@ const cleanError = () => {
   </div>
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-primary" @click="onUpdate">Update</button>
+      <button class="button is-primary" @click="showModal">Update</button>
     </div>
     <div class="control">
       <button class="button is-light" @click="toDetail">Cancel</button>
     </div>
   </div>
+  <ConfirmationModal :isActive="doesShowModal" @yes="onUpdate" @no="hideModal" />
 </template>
