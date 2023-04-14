@@ -10,4 +10,8 @@ WORKDIR $APP_ROOT
 
 RUN npm install -g npm
 
-CMD bash -c "npm run build && npm run dev"
+RUN npm install
+
+RUN npm run build
+
+CMD ["npm", "run", "dev"]
