@@ -33,7 +33,7 @@ githubRequest.get('/following').then((response) => {
     </tr>
   </table>
   <hr>
-  <p class="subtitle is-size-5">Engineers I following</p>
+  <p class="subtitle is-size-5">Engineers I'm following</p>
   <table class="following-table">
     <tr v-for="(following, index) in followings" :key="index">
       <td>
