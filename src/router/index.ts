@@ -7,6 +7,7 @@ import ArticleRegister from '@/pages/article/ArticleRegister.vue'
 import ArticleUpdate from '@/pages/article/ArticleUpdate.vue'
 import FrontendFramework from '@/pages/frontend_framework/FrontendFramework.vue'
 import BackendFramework from '@/pages/backend_framework/BackendFramework.vue'
+import CokieTheClown from '@/pages/cokie_the_clown/CokieTheClown.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -32,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/articles/:id/update',
     name: 'article_update',
     component: ArticleUpdate
+  },
+  {
+    path: '/cokie_the_clown',
+    name: 'cokie_the_clown',
+    component: CokieTheClown
   },
   {
     path: '/frontend_framework',
