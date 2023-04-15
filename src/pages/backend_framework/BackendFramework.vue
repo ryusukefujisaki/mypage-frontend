@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Header from '@/components/Header.vue'
 import axios from '@/utilities/axios'
 
 axios.get('/').then(response => {
@@ -11,5 +12,6 @@ axios.get('/').then(response => {
 </script>
 
 <template>
+  <Header></Header>
   <div class="backend-framework"></div>
 </template>
