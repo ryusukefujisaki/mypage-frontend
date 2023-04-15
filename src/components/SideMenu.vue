@@ -21,6 +21,14 @@ const setActiveMenuNumber = (menuNumber: number): void => {
       </li>
       <li>
         <router-link
+            :to="{ name: 'cokie_the_clown' }"
+            :class="{ 'is-active': activeMenuNumber == 3 }" @click="setActiveMenuNumber(3)"
+        >
+          Cokie the Clown
+        </router-link>
+      </li>
+      <li>
+        <router-link
             :to="{ name: 'frontend_framework' }"
             :class="{ 'is-active': activeMenuNumber == 1 }" @click="setActiveMenuNumber(1)"
         >
