@@ -1,4 +1,9 @@
+<script setup lang="ts">
+import Header from '@/components/Header.vue'
+</script>
+
 <template>
+  <Header title="Cokie the Clown"></Header>
   <div class="page">
     <div class="background">
       <table>
@@ -85,6 +90,7 @@ He's Cokie the Clown
 }
 .background {
   height: 100vh;
+  padding-top: 12px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 table {
