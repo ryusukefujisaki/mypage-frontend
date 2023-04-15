@@ -13,8 +13,16 @@ const setActiveMenuNumber = (menuNumber: number): void => {
     <ul class="menu-list">
       <li>
         <router-link
-            :to="{ name: 'article_list' }"
+            :to="{ name: 'my_page' }"
             :class="{ 'is-active': activeMenuNumber == 0 }" @click="setActiveMenuNumber(0)"
+        >
+          My Page
+        </router-link>
+      </li>
+      <li>
+        <router-link
+            :to="{ name: 'article_list' }"
+            :class="{ 'is-active': activeMenuNumber == 1 }" @click="setActiveMenuNumber(1)"
         >
           Articles
         </router-link>
@@ -22,7 +30,7 @@ const setActiveMenuNumber = (menuNumber: number): void => {
       <li>
         <router-link
             :to="{ name: 'cokie_the_clown' }"
-            :class="{ 'is-active': activeMenuNumber == 3 }" @click="setActiveMenuNumber(3)"
+            :class="{ 'is-active': activeMenuNumber == 2 }" @click="setActiveMenuNumber(2)"
         >
           Cokie the Clown
         </router-link>
@@ -30,7 +38,7 @@ const setActiveMenuNumber = (menuNumber: number): void => {
       <li>
         <router-link
             :to="{ name: 'frontend_framework' }"
-            :class="{ 'is-active': activeMenuNumber == 1 }" @click="setActiveMenuNumber(1)"
+            :class="{ 'is-active': activeMenuNumber == 3 }" @click="setActiveMenuNumber(3)"
         >
           Frontend Framework
         </router-link>
@@ -38,7 +46,7 @@ const setActiveMenuNumber = (menuNumber: number): void => {
       <li>
         <router-link
             :to="{ name: 'backend_framework' }"
-            :class="{ 'is-active': activeMenuNumber == 2 }" @click="setActiveMenuNumber(2)"
+            :class="{ 'is-active': activeMenuNumber == 4 }" @click="setActiveMenuNumber(4)"
         >
           Backend Framework
         </router-link>
