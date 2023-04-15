@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import Header from '@/components/Header.vue'
 import { formatDate } from '@/utilities/displayHelper'
 
 interface Article { id: number, title: string, created_at: string }
@@ -18,15 +19,11 @@ const toRegister = () => { router.push({ name: 'article_register' }) }
 </script>
 
 <template>
-  <div class="level">
-    <div class="level-left">
-      <p class="level-item is-size-4 has-text-weight-medium">Article List</p>
-    </div>
+  <Header>
     <div class="level-right">
       <button class="level-item button is-primary is-light" @click="toRegister">Register</button>
     </div>
-  </div>
-  <hr>
+  </Header>
   <table class="table is-hoverable is-fullwidth">
     <thead class="has-background-success-light">
       <tr>

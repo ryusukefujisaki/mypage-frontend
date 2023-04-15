@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import Header from '@/components/Header.vue'
 import ConfirmationModal from '@/components/ConfirmationModal.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 
@@ -33,8 +34,7 @@ const hideModal = () => {
 </script>
 
 <template>
-  <p class="is-size-4 has-text-weight-medium">Article Register</p>
-  <hr>
+  <Header></Header>
   <ErrorMessage :error="errorRef" @delete="cleanError" />
   <div class="field">
     <label class="label">Title</label>

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import axios from '@/utilities/axios'
+import Header from '@/components/Header.vue';
 import ConfirmationModal from '@/components/ConfirmationModal.vue'
 import { formatDate } from '@/utilities/displayHelper'
 
@@ -36,16 +37,12 @@ const hideModal = () => {
 </script>
 
 <template>
-  <div class="level">
-    <div class="level-left">
-      <p class="level-item is-size-4 has-text-weight-medium">{{ articleDetail.title }}</p>
-    </div>
+  <Header :title="articleDetail.title">
     <div class="level-right">
       <button class="level-item button is-primary is-light" @click="toUpdate">Update</button>
       <button class="level-item button is-danger is-light" @click="showModal">Delete</button>
     </div>
-  </div>
-  <hr>
+  </Header>
   <div>{{ articleDetail.content }}</div>
   <br>
   <p>Created At: {{ formatDate(articleDetail.created_at) }}</p>
