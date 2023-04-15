@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
+import ItsMe from '@/pages/its_me/ItsMe.vue'
 import ArticleList from '@/pages/article/ArticleList.vue'
 import ArticleDetail from '@/pages/article/ArticleDetail.vue'
 import ArticleRegister from '@/pages/article/ArticleRegister.vue'
@@ -12,7 +13,12 @@ import CokieTheClown from '@/pages/cokie_the_clown/CokieTheClown.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: { name: 'article_list' }
+    redirect: { name: 'its_me' }
+  },
+  {
+    path: '/its_me',
+    name: 'its_me',
+    component: ItsMe
   },
   {
     path: '/articles',
