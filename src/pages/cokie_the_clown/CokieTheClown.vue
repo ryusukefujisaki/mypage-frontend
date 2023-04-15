@@ -33,48 +33,48 @@ import Header from '@/components/Header.vue'
         <tr>
           <td>
             <pre>
-    All the way from Palm Springs, just out of detox
-    Show him a warm welcome, let's give some applause
+  All the way from Palm Springs, just out of detox
+  Show him a warm welcome, let's give some applause
 
-    Greetings all, hello
-    Welcome to my show
-    I'm sure you'll have fun
-    Watching me juggle
-    Eight balls at one time
-    I'm no fucking mime
-    I play practical jokes
-    This squirting flower
-    That wasn't flour
-    That blew up your nose
-    It's my special blend
-    Of X, coke, and K
-    You should be okay
-    In several hours
+  Greetings all, hello
+  Welcome to my show
+  I'm sure you'll have fun
+  Watching me juggle
+  Eight balls at one time
+  I'm no fucking mime
+  I play practical jokes
+  This squirting flower
+  That wasn't flour
+  That blew up your nose
+  It's my special blend
+  Of X, coke, and K
+  You should be okay
+  In several hours
             </pre>
           </td>
           <td>
             <pre>
-He's got over sized shoes, and ill-fitting clothes
-That is real blood dripping from his fake red nose
+  He's got over sized shoes, and ill-fitting clothes
+  That is real blood dripping from his fake red nose
 
-I'm Cokie the Clown
-I will trip you down
-Those 12 giant steps
-I brought you all presents
-Against good judgment
-But being a good host
-You all have been dosed
-The kettle corn’s been laced
-The fudge has been lined
-You're having a great time
-But you might not recall
-From rohypnol
-In the lemonade
-Cokie homemade
+  I'm Cokie the Clown
+  I will trip you down
+  Those 12 giant steps
+  I brought you all presents
+  Against good judgment
+  But being a good host
+  You all have been dosed
+  The kettle corn’s been laced
+  The fudge has been lined
+  You're having a great time
+  But you might not recall
+  From rohypnol
+  In the lemonade
+  Cokie homemade
 
-He's the happiest clown
-With the biggest frown
-He's Cokie the Clown
+  He's the happiest clown
+  With the biggest frown
+  He's Cokie the Clown
             </pre>
           </td>
         </tr>
@@ -101,9 +101,7 @@ table {
   margin-bottom: 12px;
 }
 .content {
-  margin: 0 auto;
-  display: grid;
-  justify-content: center;
+  margin-left: 24px;
 }
 .image {
   width: 315px;
