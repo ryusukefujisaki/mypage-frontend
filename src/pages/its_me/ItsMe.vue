@@ -7,11 +7,11 @@ const githubRequest = axios.create({
   baseURL: 'https://api.github.com/users/ryusukefujisaki'
 })
 
-const own = ref({ url: '' });
-githubRequest.get().then((response) => {
+const own = ref<{ url: string }>({ url: '' });
+githubRequest.get('').then((response) => {
   own.value.url = response.data.html_url
 });
-const followings = ref([]);
+const followings = ref<Array<{ login: string, avatar_url: string, html_url: string }>>([]);
 githubRequest.get('/following').then((response) => {
   followings.value = response.data
 })
@@ -52,11 +52,11 @@ table {
   width: 100%;
 }
 .its-me {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
 }
 .its-me-table > tr > td:first-child {
-  width: 220px;
+  width: 200px;
 }
 .its-me-table > tr > td:last-child {
   text-align: center;
