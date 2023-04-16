@@ -1,3 +1,13 @@
+export const titleFromRouteName = (routeName: any) => {
+  const parts = routeName.split('_')
+  return parts.reduce((carry: string, part: string, index: number) => {
+    if (index > 0) {
+      carry += ' '
+    }
+    return carry + part[0].toUpperCase() + part.slice(1);
+  }, '');
+}
+
 export const formatDate = function (dateString: string): string {
   const date = new Date(dateString)
   const _ = {
