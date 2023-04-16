@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import { titleFromRouteName } from '@/utilities/displayHelper'
 
 import ItsMe from '@/pages/its_me/ItsMe.vue'
 import ArticleList from '@/pages/article/ArticleList.vue'
@@ -60,6 +61,12 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes // = routes: routes
+})
+
+const DEFAULT_TITLE = 'My Page'
+router.afterEach((to) => {
+  const title = to.name ? `${titleFromRouteName(to.name)} | ${DEFAULT_TITLE}` : DEFAULT_TITLE
+  document.title = title
 })
 
 export default router
