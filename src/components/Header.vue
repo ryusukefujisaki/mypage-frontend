@@ -1,17 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { titleFromRouteName } from '@/utilities/displayHelper'
 
 const props = defineProps({ title: null })
-const titleFromRouteName = (routeName: any) => {
-  const parts = routeName.split('_')
-  return parts.reduce((carry: string, part: string, index: number) => {
-    if (index > 0) {
-      carry += ' '
-    }
-    return carry + part[0].toUpperCase() + part.slice(1);
-  }, '');
-}
 const title = computed(() => {
   return props.title || titleFromRouteName(useRoute().name)
 })
