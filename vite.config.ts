@@ -8,5 +8,8 @@ export default defineConfig({
   server: {
     host: true,
     watch: { usePolling: true }
+  },
+  build: {
+    chunkSizeWarningLimit: 1600
   }
 })
