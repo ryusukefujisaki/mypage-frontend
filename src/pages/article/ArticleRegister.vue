@@ -8,12 +8,14 @@ import ErrorMessage from '@/components/ErrorMessage.vue'
 
 interface Article { title: string, content: string, image: File | null }
 const input = ref<Article>({ title: '', content: '', image: null })
-let img = null
+let img: any = null
 let blobURL = ''
-const setImage = (event: Event) => {
+const setImage = (event: any) => {
   event.preventDefault()
   input.value.image = event.target.files[0]
-  blobURL = URL.createObjectURL(input.value.image)
+  if (input.value.image !== null) {
+    blobURL = URL.createObjectURL(input.value.image)
+  }
   img = document.getElementById('image')
   img.src = blobURL
 }
