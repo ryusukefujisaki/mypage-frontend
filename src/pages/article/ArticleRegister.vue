@@ -49,7 +49,6 @@ const hideModal = () => {
 </script>
 
 <template>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
   <Header></Header>
   <ErrorMessage :error="errorRef" @delete="cleanError" />
   <div class="field">
@@ -76,7 +75,7 @@ const hideModal = () => {
         <input class="file-input" type="file" @change="setImage" />
         <span class="file-cta">
           <span class="file-icon">
-            <i class="fas fa-upload"></i>
+            <font-awesome-icon icon="fas fa-upload" />
           </span>
           <span class="file-label">
             Choose an image file...
