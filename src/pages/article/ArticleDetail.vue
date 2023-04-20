@@ -50,11 +50,20 @@ const hideModal = () => {
     </a>
   </div>
   <div class="content">
-    {{ articleDetail.content }}
+    <pre>{{ articleDetail.content }}</pre>
   </div>
-  <br>
-  <p>Created At: {{ formatDate(articleDetail.created_at) }}</p>
-  <p>Updated At: {{ formatDate(articleDetail.updated_at) }}</p>
+  <table>
+    <tr>
+      <td>Created At</td>
+      <td>&nbsp;:&nbsp;</td>
+      <td>{{ formatDate(articleDetail.created_at) }}</td>
+    </tr>
+    <tr>
+      <td>Updated At</td>
+      <td>&nbsp;:&nbsp;</td>
+      <td>{{ formatDate(articleDetail.updated_at) }}</td>
+    </tr>
+  </table>
   <ConfirmationModal :isActive="doesShowModal" @yes="onDelete" @no="hideModal" />
 </template>
 
@@ -64,5 +73,8 @@ img {
 }
 .content {
   margin-top: 16px;
+}
+td:first-child {
+  text-align: left;
 }
 </style>
