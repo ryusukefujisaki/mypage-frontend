@@ -22,7 +22,7 @@ const setImage = (event: any) => {
 const deleteImage = () => {
   input.value.image = null
   blobURL = ''
-  img.src = null
+  img.src = ''
 }
 
 const router = useRouter()

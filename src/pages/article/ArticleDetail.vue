@@ -43,9 +43,25 @@ const hideModal = () => {
       <button class="level-item button is-danger is-light" @click="showModal">Delete</button>
     </div>
   </Header>
-  <div>{{ articleDetail.content }}</div>
+  <div v-if="articleDetail.image_url">
+    <a v-bind:href="`${articleDetail.image_url}`" target="_blank">
+      <img :src="articleDetail.image_url" />
+    </a>
+  </div>
+  <div class="content">
+    {{ articleDetail.content }}
+  </div>
   <br>
   <p>Created At: {{ formatDate(articleDetail.created_at) }}</p>
   <p>Updated At: {{ formatDate(articleDetail.updated_at) }}</p>
   <ConfirmationModal :isActive="doesShowModal" @yes="onDelete" @no="hideModal" />
 </template>
+
+<style scoped>
+img {
+  max-height: 280px;
+}
+.content {
+  margin-top: 16px;
+}
+</style>
