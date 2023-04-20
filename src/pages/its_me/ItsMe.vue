@@ -52,8 +52,8 @@ table {
   width: 100%;
 }
 .its-me {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 .its-me-table > tr > td:first-child {
   width: 200px;
@@ -63,13 +63,13 @@ table {
   vertical-align: middle;
 }
 .following {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
 }
 .following-table tr {
   border-bottom: solid 2px whitesmoke;
 }
 .following-table td {
-  padding: 8px 0;
+  padding: 6px 0;
 }
 </style>
