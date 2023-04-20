@@ -11,7 +11,6 @@ const input = ref<Article>({ title: '', content: '', image: null })
 let img: any = null
 let blobURL = ''
 const setImage = (event: any) => {
-  event.preventDefault()
   input.value.image = event.target.files[0]
   if (input.value.image !== null) {
     blobURL = URL.createObjectURL(input.value.image)
@@ -21,8 +20,7 @@ const setImage = (event: any) => {
 }
 const deleteImage = () => {
   input.value.image = null
-  blobURL = ''
-  img.src = ''
+  img.src = blobURL = ''
 }
 
 const router = useRouter()
@@ -32,8 +30,8 @@ const onSubmit = () => {
   hideModal()
   const config = { headers: { 'Content-Type': 'multipart/form-data' } }
   axios.post('/articles', input.value, config).then(() => {
-    toList() }
-  ).catch(error => {
+    toList()
+  }).catch(error => {
     errorRef.value = error
   })
 }
