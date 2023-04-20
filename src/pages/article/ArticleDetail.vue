@@ -7,10 +7,11 @@ import ConfirmationModal from '@/components/ConfirmationModal.vue'
 import { formatDate } from '@/utilities/displayHelper'
 
 const id = useRoute().params.id
-interface Article { title: string, content: string, created_at: string, updated_at: string }
+interface Article { title: string, content: string, image_url: string | null, created_at: string, updated_at: string }
 const articleDetail = ref<Article>({
   title: '',
   content: '',
+  image_url: null,
   created_at: '',
   updated_at: ''
 })
@@ -43,9 +44,37 @@ const hideModal = () => {
       <button class="level-item button is-danger is-light" @click="showModal">Delete</button>
     </div>
   </Header>
-  <div>{{ articleDetail.content }}</div>
-  <br>
-  <p>Created At: {{ formatDate(articleDetail.created_at) }}</p>
-  <p>Updated At: {{ formatDate(articleDetail.updated_at) }}</p>
+  <div v-if="articleDetail.image_url">
+    <a v-bind:href="`${articleDetail.image_url}`" target="_blank">
+      <img :src="articleDetail.image_url" />
+    </a>
+  </div>
+  <div class="content">
+    <pre>{{ articleDetail.content }}</pre>
+  </div>
+  <table>
+    <tr>
+      <td>Created At</td>
+      <td>&nbsp;:&nbsp;</td>
+      <td>{{ formatDate(articleDetail.created_at) }}</td>
+    </tr>
+    <tr>
+      <td>Updated At</td>
+      <td>&nbsp;:&nbsp;</td>
+      <td>{{ formatDate(articleDetail.updated_at) }}</td>
+    </tr>
+  </table>
   <ConfirmationModal :isActive="doesShowModal" @yes="onDelete" @no="hideModal" />
 </template>
+
+<style scoped>
+img {
+  max-height: 280px;
+}
+.content {
+  margin-top: 16px;
+}
+td:first-child {
+  text-align: left;
+}
+</style>

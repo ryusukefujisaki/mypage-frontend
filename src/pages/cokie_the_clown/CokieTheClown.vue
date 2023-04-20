@@ -23,7 +23,6 @@ import Header from '@/components/Header.vue'
                 src="https://www.youtube.com/embed/mhyWBDxHTeg"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               >
               </iframe>
