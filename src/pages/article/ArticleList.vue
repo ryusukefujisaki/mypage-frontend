@@ -5,7 +5,7 @@ import axios from '@/utilities/axios'
 import Header from '@/components/Header.vue'
 import { formatDate } from '@/utilities/displayHelper'
 
-interface Article { id: number, title: string, created_at: string }
+interface Article { id: number, title: string, image_url: string | null, created_at: string }
 const articles = ref<Article[]>([])
 axios.get('/articles').then(response => {
   articles.value = response.data
@@ -28,6 +28,7 @@ const toRegister = () => { router.push({ name: 'article_register' }) }
     <thead class="has-background-success-light">
       <tr>
         <th>#</th>
+        <th></th>
         <th>Title</th>
         <th>Created At</th>
       </tr>
@@ -36,6 +37,7 @@ const toRegister = () => { router.push({ name: 'article_register' }) }
       <template v-for="(article, index) in articles" :key="index">
         <tr class="to-detail" @click="toDetail(article.id)">
           <th>{{ index + 1 }}</th>
+          <td><img v-if="article.image_url" :src="article.image_url" /></td>
           <td>{{ article.title }}</td>
           <td>{{ formatDate(article.created_at) }}</td>
         </tr>
@@ -45,6 +47,13 @@ const toRegister = () => { router.push({ name: 'article_register' }) }
 </template>
 
 <style scoped>
+tbody tr {
+  height: 58.5px;
+}
+img {
+  width: 36px;
+  height: 36px;
+}
 .to-detail {
   cursor: pointer;
 }
