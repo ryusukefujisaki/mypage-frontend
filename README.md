@@ -1,5 +1,5 @@
-# mypage-frontend-app
-mypage-frontend-app
+# mypage-frontend
+mypage-frontend
 
 # Vue 3 + TypeScript + Vite
 
